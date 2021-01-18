@@ -19,7 +19,6 @@ Do the following:
 */
 
 
-
 /*
 Task 1b - Values
 
@@ -58,10 +57,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
 
+function multiply( a, b){
+  return a*b;
+}
+console.log(multiply(4, 6));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,11 +74,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(dogAge){
+   let age = dogAge * 7
+   return age
 }
-
-
+console.log(dogYears(3))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -107,11 +107,31 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight,years){
+  if(years >= 1){
+    if(weight <= 5){
+      return weight*.05
+    }else if(weight >= 6 && weight <=10){
+      return weight*.04
+    }else if(weight >= 11 && weight <=15){
+      return weight*.03
+    }else if(weight > 15){
+      return weight*.02
+    }
   }
+  if(years < 1){
+    if( years >= .2 && years <= .4){
+      return weight*.10 
+    }else if( years >= .4 && years <=.7){
+      return weight*.05
+    }else if( years >= .7 && years <=.12){
+    return weight*.04
+    }
+  }
+}
 
 
+console.log(hungryDog(10,.5))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -133,9 +153,31 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computersChoice = Math.floor(Math.random() * 3);
+ if(computersChoice === 0){
+   computersChoice = "scissors";
+ }else if(computersChoice === 1){
+   computersChoice = "rock";
+ }else if(computersChoice === 2){
+  computersChoice = "paper";
+ }
 
 function game(user, computer){
-    /*add your code here*/
+    if(user === computer){
+      return "it's a tie"
+    }else if(user === "scissors" && computer === "paper"){
+      return "you win!"
+    }else if(user === "scissors" && computer === "rock"){
+      return "you lose!"
+    }else if(user === "paper" && computer === "rock"){
+      return "you win!"
+    }else if(user === "paper" && computer === "scissors"){
+      return "you lose!"
+    }else if(user === "rock" && computer === "paper"){
+      return "you lose!"
+    }else if(user === "rock" && computer === "scissors"){
+      return "you win!"
+    }
 }
   
   
@@ -151,10 +193,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
-
+function miles(km){
+  return km * 0.621371;
+}
 
 
 //Task 5b - Feet to CM
@@ -165,11 +206,10 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
+function feet(cm){
+    return cm / 30.48;  
+}
  
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -181,8 +221,8 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(number){
+  return `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number -1} bottles of soda on the wall`
   }
 
 
@@ -201,10 +241,19 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if( score >= 90 && score <= 100){
+    return 'you got an A';
+  }else if( score >= 80 && score <=89){
+    return 'you got a B';
+  }else if( score >= 70 && score <=79){
+    return 'you got a C'
+  }else if( score >= 60 && score <=69){
+    return 'you got a D'
+  }else{
+    return 'you got an F'
   }
-  
+}
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
